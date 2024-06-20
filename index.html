@@ -3,94 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherAPI</title>
-    <link href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" rel="stylesheet" >
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" >
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Home</title>
 </head>
 <body>
     <div id="container">
-        <div class="header">
-            <h2>Weather</h2>
-            <div class="weather-input">
-                <input type="text" name="city" id="city_input" placeholder="Enter city name">
-                <button type="button" id="searchBtn">
-                    <i class="fa-regular fa-search"></i> Search
-                </button>
-                <button type="button" id="locationBtn">
-                    <i class="bx bx-target-lock"></i> Current Location
-                </button>
-            </div>
+        <div class="card">
+                <img src="https://media.istockphoto.com/id/484156008/es/vector/banderas-de-todo-el-mundo.jpg?s=612x612&w=0&k=20&c=tuIFowUORqnS0L-Bta21Hv5oIOINnkR-nJVGNA693JM=" alt="">
+                <div class="card-detail">
+                    <h1>REST Countries API </h1>
+                    <h2><br>Descripción:</h2>
+                    <p>Una web que utiliza el API REST Countries para ofrecer información detallada y actualizada sobre todos 
+                        los países del mundo, facilitando el acceso a datos clave y estadísticas globales.</p>
+                    <a href=" ">
+                        <h3><br>¡Accede a nuestra web!</h3>
+                    </a>
+                </div>
+        </div>
+        <div class="card">
+                <img src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg" alt="">
+                <div class="card-detail">
+                    <h1>Random User Generator API</h1>
+                    <h2><br>Descripción:</h2>
+                    <p>Una web que emplea el API Random User Generator para generar perfiles de redes sociales aleatorios, 
+                        proporcionando usuarios ficticios con datos realistas para diversas aplicaciones y pruebas.</p>
+                    <a href=" ">
+                        <h3><br>¡Accede a nuestra web!</h3>
+                    </a>
+                </div>
+        </div>
+        <div class="card">
+                <img src="https://img.freepik.com/vector-gratis/iconos-clima-nublado-lluvioso-soleado_1308-126268.jpg?size=626&ext=jpg&ga=GA1.1.672697106.1718755200&semt=sph" alt="">
+                <div class="card-detail">
+                    <h1>OpenWeather API </h1>
+                    <h2><br>Descripción:</h2>
+                    <p>Una página web que integra OpenWeatherAPI para ofrecer datos meteorológicos en tiempo real 
+                        para cualquier ciudad seleccionada, optimizando la precisión y accesibilidad de la información climática.</p>
+                    <a href="weather.html">
+                        <h3><br>¡Accede a nuestra web!</h3>
+                    </a>
+                </div>
         </div>
     </div>
-    <div class="weather-data">
-        <div class="weather-left">
-            <div class="card">
-                <div class="current-weather">
-                    <div class="details">
-                        <p>Now</p>
-                        <h2>___&deg;C</h2>
-                        <p>_______</p>
-                    </div>
-                    <div class="weather-icon">
-                        <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="">
-                    </div>
-                </div>
-                <hr>
-                <div class="card-footer">
-                    <p><i class="fa-regular fa-calendar"></i>______</p>
-                    <p><i class="fa-regular fa-location-dot"></i>______</p>
-                </div>
-            </div>
-            <div class="card">
-                <h2>5 Days Forecast</h2>
-                <div class="day-forecast">
-                    <div class="forecast-item">
-                        <div class="icon-wrapper">
-                            <img src="https://openweathermap.org/img/wn/02d.png" alt="">
-                            <span>___&deg;C</span>
-                        </div>
-                        <p>____</p>
-                        <p>____</p>
-                    </div>
-                    <div class="forecast-item">
-                        <div class="icon-wrapper">
-                            <img src="https://openweathermap.org/img/wn/02d.png" alt="">
-                            <span>___&deg;C</span>
-                        </div>
-                        <p>____</p>
-                        <p>____</p>
-                    </div>
-                    <div class="forecast-item">
-                        <div class="icon-wrapper">
-                            <img src="https://openweathermap.org/img/wn/02d.png" alt="">
-                            <span>___&deg;C</span>
-                        </div>
-                        <p>____</p>
-                        <p>____</p>
-                    </div>
-                    <div class="forecast-item">
-                        <div class="icon-wrapper">
-                            <img src="https://openweathermap.org/img/wn/02d.png" alt="">
-                            <span>___&deg;C</span>
-                        </div>
-                        <p>____</p>
-                        <p>____</p>
-                    </div>
-                    <div class="forecast-item">
-                        <div class="icon-wrapper">
-                            <img src="https://openweathermap.org/img/wn/02d.png" alt="">
-                            <span>___&deg;C</span>
-                        </div>
-                        <p>____</p>
-                        <p>____</p>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    
-
 </body>
 </html>
