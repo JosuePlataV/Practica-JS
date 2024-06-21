@@ -12,12 +12,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 20px 25px 25px 25px;
+    padding: 20px 25px 21px 25px;
 }
 
 .card {
     background: #d9471f;
-    margin-bottom: 35px;
     border-radius: 8px;
     box-shadow: 2px 2px 5px #ccc;
     color: #000;
