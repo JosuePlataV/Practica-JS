@@ -76,7 +76,7 @@ body{
 }
 
 .weather-data{
-     display: grid;
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
 }
@@ -111,6 +111,5 @@ body{
 
 .icon-wrapper{
     display: flex;
-    align-items: center;
-    
+    align-items: center;    
 }
