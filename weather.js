@@ -5,7 +5,7 @@ currentWeatherCard = document.querySelectorAll('.weather-left .card')[0],
 fiveDaysForecastCard = document.querySelector('.day-forecast');
 
 function getWeatherDetails(name, lat, lon, country, state){
-    let FORECAST_API_URL = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&appid=${api_key}`,
+    let FORECAST_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`,
     WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api_key}`,
     days = [
         'Sunday',
@@ -63,7 +63,7 @@ function getWeatherDetails(name, lat, lon, country, state){
             }
         });
         fiveDaysForecastCard.innerHTML = '';
-        for(i = 1; i < fiveDaysForecast.length; i++){
+        for(let i = 1; i < fiveDaysForecast.length; i++){
             let date = new Date(fiveDaysForecast[i].dt_txt);
             fiveDaysForecastCard.innerHTML += `
                 <div class="forecast-item"> 
@@ -81,14 +81,16 @@ function getWeatherDetails(name, lat, lon, country, state){
     });
 }
 
-
-
 function getCityCoordinates(){
     let cityName = cityInput.value.trim();
     cityInput.value='';
     if(!cityName) return;
     let GEOCODING_API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${api_key}`;
     fetch(GEOCODING_API_URL).then(res => res.json()).then(data => {
+        if(data.length === 0) {
+            alert(`No coordinates found for ${cityName}`);
+            return;
+        }
         let {name, lat, lon, country, state} = data[0];
         getWeatherDetails(name, lat, lon, country, state);
     }).catch(() => {
@@ -96,5 +98,4 @@ function getCityCoordinates(){
     });
 }
 
-
-searchBtn.addEventListener('click', getCityCoordinates)
+searchBtn.addEventListener('click', getCityCoordinates);
