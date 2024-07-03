@@ -63,7 +63,7 @@ function getWeatherDetails(name, lat, lon, country, state){
             }
         });
         fiveDaysForecastCard.innerHTML = '';
-        for(let i = 1; i < fiveDaysForecast.length; i++){
+        for(let i = 0; i < fiveDaysForecast.length; i++){
             let date = new Date(fiveDaysForecast[i].dt_txt);
             fiveDaysForecastCard.innerHTML += `
                 <div class="forecast-item"> 
