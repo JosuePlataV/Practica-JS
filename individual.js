@@ -1,8 +1,8 @@
 const urlParams = new URLSearchParams(window.location.search);
-const countryCode = urlParams.get('country');
+const countryCode = urlParams.get('country'); // Obtener el código CCA2 del parámetro de la URL
 const detailsContainer = document.querySelector('#country-details');
 
-const url = `https://restcountries.com/v3.1/alpha/${countryCode}`;
+const url = `https://restcountries.com/v3.1/alpha/${countryCode}`; // Construir la URL de la API usando CCA2
 
 fetch(url)
     .then(response => response.json())
@@ -12,7 +12,7 @@ fetch(url)
             <h1>${country.name.common}</h1>
             <img src="${country.flags.png}" alt="Bandera de ${country.name.common}">
             <p><strong>Otros nombres:</strong> ${country.altSpellings.join(', ')}</p>
-            <p><strong>Capital:</strong> ${country.capital ? country.capital[0] : 'N/A'}</p>
+            <p><strong>Capital:</strong> ${country.capital ? `<a href="weather.html?state=${country.name.common}&capital=${country.capital[0]}">${country.capital[0]}</a>` : 'N/A'}</p>
             <p><strong>Continentes:</strong> ${country.continents.join(', ')}</p>
             <p><strong>Idiomas:</strong> ${Object.values(country.languages).join(', ')}</p>
             <p><strong>Google Maps:</strong> <a href="${country.maps.googleMaps}">Ver en Google Maps</a></p>
@@ -20,7 +20,6 @@ fetch(url)
             <p><strong>Zonas Horarias: </strong> ${country.timezones.join(', ')}</p>
             <p><strong>Coordenadas:</strong> Latitud ${country.latlng[0]}, Longitud ${country.latlng[1]}</p>
             <p><strong>Símbolo de la Moneda:</strong> ${Object.values(country.currencies)[0].symbol}</p>
-            <p><strong>Abreviaciones:</strong> ${country.cca2}</p>
         `;
         detailsContainer.innerHTML = detailsTemplate;
     })
