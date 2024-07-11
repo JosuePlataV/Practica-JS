@@ -9,7 +9,7 @@ humidityVal = document.getElementById(`humidityVal`),
 pressureVal = document.getElementById(`pressureVal`),
 visibilityVal = document.getElementById(`visibilityVal`),
 windSpeedVal = document.getElementById(`windSpeedVal`),
-feelsVal = document.getElementById(`feelsVal`);
+feelsVal = document.getElementById(`feelsVal`); 
 
 function getWeatherDetails(name, lat, lon, country, state){
     let FORECAST_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${api_key}`,
@@ -54,9 +54,10 @@ function getWeatherDetails(name, lat, lon, country, state){
             <hr>
             <div class="card-footer">
                 <p><i class="fa-regular fa-calendar"></i> ${days[date.getDay()]}, ${date.getDate()}, ${months[date.getMonth()]} ${date.getFullYear()}</p>
-                <p><i class="fa-regular fa-location-dot"></i> ${name}, ${country}</p>
+                <p><i class="fa-regular fa-location-dot"></i> ${name}, <a id="country-link" href="#"> ${country}</a></p>
             </div>
         `;
+        document.getElementById ('country-link').setAttribute('href', `individual.html?country=${country}`);
         let {sunrise, sunset} = data.sys,
         {timezone, visibility} = data,
         {humidity, pressure, feels_like} = data.main,

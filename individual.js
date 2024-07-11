@@ -20,6 +20,8 @@ fetch(url)
             <p><strong>Zonas Horarias: </strong> ${country.timezones}</p>
             <p><strong>Coordenadas:</strong> Latitud ${country.latlng[0]}, Longitud ${country.latlng[1]}</p>
             <p><strong>Símbolo de la Moneda:</strong> ${Object.values(country.currencies)[0].symbol}</p>
+            <p><strong>Abreviaciones:</strong> ${country.cca2}</p>
         `;
         detailsContainer.innerHTML = detailsTemplate;
     });
+
