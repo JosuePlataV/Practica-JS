@@ -24,4 +24,4 @@ fetch(url)
         `;
         detailsContainer.innerHTML = detailsTemplate;
     });
-
+    
