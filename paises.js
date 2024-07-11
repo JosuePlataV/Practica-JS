@@ -7,7 +7,7 @@ fetch(url)
         countries.forEach(country => {
             const countryTemplate = `
             <div class="country">
-                <div class="img"><a href="individual.html?country=${country.name.common}">
+                <div class="img"><a href="individual.html?country=${country.cca2}">
                     <img src="${country.flags.png}" alt="Bandera de ${country.name.common}">
                     <div class="tit">
                     <h2>${country.name.common}</h2></a>
@@ -23,4 +23,4 @@ fetch(url)
             `;
             Container.innerHTML += countryTemplate; // Agregar cada tarjeta de país al contenedor
         });
-    })
+    });
